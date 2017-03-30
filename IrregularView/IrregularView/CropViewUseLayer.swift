@@ -16,8 +16,12 @@ class CropViewUseLayer: UIView {
         
         let path = UIBezierPath()
         
-        for model in lineModelArray {
-            path.move(to: model.startPoint)
+        for index in 0...lineModelArray.count-1 {
+            let model = lineModelArray[index]
+            
+            if index == 0 {
+                path.move(to: model.startPoint)
+            }
             if model.lineType == LineType.StraightLine {
                 path.addLine(to: model.endPoint)
             }
@@ -31,7 +35,7 @@ class CropViewUseLayer: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.red.cgColor
-        shapeLayer.frame = self.frame
+        shapeLayer.frame = self.bounds
         self.layer.mask = shapeLayer
         
         let borderLLayer = CAShapeLayer()
