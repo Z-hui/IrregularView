@@ -14,6 +14,8 @@
 		95411A7C1E8C9CDB00505626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95411A7A1E8C9CDB00505626 /* LaunchScreen.storyboard */; };
 		95411A841E8C9D1400505626 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95411A831E8C9D1400505626 /* LineModel.swift */; };
 		95411A881E8C9FDA00505626 /* CropViewUseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95411A871E8C9FDA00505626 /* CropViewUseLayer.swift */; };
+		95411A8D1E8CED6C00505626 /* HinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95411A8C1E8CED6C00505626 /* HinderModel.swift */; };
+		95411A8F1E8CF2D300505626 /* ProduceWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95411A8E1E8CF2D300505626 /* ProduceWay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		95411A7D1E8C9CDB00505626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95411A831E8C9D1400505626 /* LineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineModel.swift; sourceTree = "<group>"; };
 		95411A871E8C9FDA00505626 /* CropViewUseLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewUseLayer.swift; sourceTree = "<group>"; };
+		95411A8A1E8CE35100505626 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		95411A8C1E8CED6C00505626 /* HinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HinderModel.swift; sourceTree = "<group>"; };
+		95411A8E1E8CF2D300505626 /* ProduceWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProduceWay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			children = (
 				95411A701E8C9CDB00505626 /* IrregularView */,
 				95411A6F1E8C9CDB00505626 /* Products */,
+				95411A891E8CE35100505626 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +64,58 @@
 		95411A701E8C9CDB00505626 /* IrregularView */ = {
 			isa = PBXGroup;
 			children = (
-				95411A711E8C9CDB00505626 /* AppDelegate.swift */,
-				95411A731E8C9CDB00505626 /* ViewController.swift */,
+				955D54C01E8E1E9D0095004C /* Controller */,
+				955D54BF1E8E1E940095004C /* View */,
+				955D54BE1E8E1E870095004C /* Model */,
+				955D54C11E8E1EB50095004C /* Main */,
+			);
+			path = IrregularView;
+			sourceTree = "<group>";
+		};
+		95411A891E8CE35100505626 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95411A8A1E8CE35100505626 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955D54BE1E8E1E870095004C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95411A8E1E8CF2D300505626 /* ProduceWay.swift */,
+				95411A8C1E8CED6C00505626 /* HinderModel.swift */,
 				95411A831E8C9D1400505626 /* LineModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		955D54BF1E8E1E940095004C /* View */ = {
+			isa = PBXGroup;
+			children = (
 				95411A871E8C9FDA00505626 /* CropViewUseLayer.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		955D54C01E8E1E9D0095004C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95411A731E8C9CDB00505626 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		955D54C11E8E1EB50095004C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				95411A711E8C9CDB00505626 /* AppDelegate.swift */,
 				95411A751E8C9CDB00505626 /* Main.storyboard */,
 				95411A781E8C9CDB00505626 /* Assets.xcassets */,
 				95411A7A1E8C9CDB00505626 /* LaunchScreen.storyboard */,
 				95411A7D1E8C9CDB00505626 /* Info.plist */,
 			);
-			path = IrregularView;
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +150,7 @@
 				TargetAttributes = {
 					95411A6D1E8C9CDB00505626 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 93C85CNZYX;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -143,8 +192,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95411A741E8C9CDB00505626 /* ViewController.swift in Sources */,
+				95411A8D1E8CED6C00505626 /* HinderModel.swift in Sources */,
 				95411A721E8C9CDB00505626 /* AppDelegate.swift in Sources */,
 				95411A881E8C9FDA00505626 /* CropViewUseLayer.swift in Sources */,
+				95411A8F1E8CF2D300505626 /* ProduceWay.swift in Sources */,
 				95411A841E8C9D1400505626 /* LineModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,9 +317,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 93C85CNZYX;
 				INFOPLIST_FILE = IrregularView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HSEDU.IrregularView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Vyanke.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -278,9 +331,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 93C85CNZYX;
 				INFOPLIST_FILE = IrregularView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HSEDU.IrregularView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Vyanke.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -305,6 +360,7 @@
 				95411A821E8C9CDB00505626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
