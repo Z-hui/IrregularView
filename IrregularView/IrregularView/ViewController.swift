@@ -12,9 +12,40 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        resetAction()
+    }
+    
+    func pieceUI() -> Void {
+        let btn = UIButton()
+        btn.frame = CGRect(x:(UIScreen.main.bounds.size.width-50)/2,y:0,width:50,height:50)
+        self.view.addSubview(btn)
+        btn.backgroundColor = UIColor.red
+        btn.setTitle("拼啊拼", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        btn.addTarget(self, action: #selector(pieceAction), for: .touchUpInside)
+    }
+    
+    func resetUI() -> Void {
+        let btn = UIButton()
+        btn.frame = CGRect(x:(UIScreen.main.bounds.size.width-50)/2,y:(UIScreen.main.bounds.size.height-50),width:50,height:50)
+        self.view.addSubview(btn)
+        btn.backgroundColor = UIColor.red
+        btn.setTitle("重置", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        btn.addTarget(self, action: #selector(resetAction), for: .touchUpInside)
+    }
+    
+    func pieceAction() -> Void {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "piece"), object: nil)
+    }
+    
+    func resetAction() -> Void {
+        for view in self.view.subviews {
+            view.removeFromSuperview()
+        }
+        pieceUI()
+        resetUI()
         creatView1()
-        
     }
 
     func creatView1() -> Void {
@@ -46,6 +77,7 @@ class ViewController: UIViewController {
         
         cropView.lineModelArray = way.cropGraphOnePointArray
         cropView.drawLine()
+        cropView.transform = cropView.transform.rotated(by: CGFloat(M_PI/2))
         creatView2(arr: way.cropGraphTwoPointArray)
     }
     
@@ -67,6 +99,7 @@ class ViewController: UIViewController {
         
         cropView.lineModelArray = arr as! [LineModel]
         cropView.drawLine()
+    cropView.transform = cropView.transform.rotated(by: CGFloat(M_PI/2))
     }
     
     

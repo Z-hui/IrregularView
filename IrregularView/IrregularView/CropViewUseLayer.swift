@@ -61,8 +61,13 @@ class CropViewUseLayer: UIView {
         button.setBackgroundImage(creatImageWithColor(color: UIColor.red), for: .highlighted)
         button.isUserInteractionEnabled  = false
         self.isUserInteractionEnabled = true
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotice), name:  NSNotification.Name(rawValue: "piece"), object: nil)
+        
+        
     }
-    
+    func receivedNotice() -> Void {
+        self.viewClick?(self)
+    }
 
     func creatImageWithColor(color:UIColor)->UIImage{
         let rect = CGRect(x:0,y:0,width:1,height:1)
@@ -88,6 +93,10 @@ class CropViewUseLayer: UIView {
         }
         
     }
+   
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        button.isHighlighted = false
+    }
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if marginalPath.contains(point)
         {
@@ -98,7 +107,9 @@ class CropViewUseLayer: UIView {
             return false
         }
     }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        button.isHighlighted = false
+    
+    override func removeFromSuperview() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "piece"), object: nil)
+        super.removeFromSuperview()
     }
 }
